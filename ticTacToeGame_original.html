@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tic Tac Toe</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<!-- <div class="pyro">
+  		<div class="before"></div>
+ 		<div class="after"></div>
+	</div> -->
+
+	<div class="container">
+		<h1 class="text-center mt-5 text-white">TIC TAC TOE</h1>
+		<div class="row main_row">
+			<div class="col-4">
+				<input type="button" name="" value="Reset" onclick="resetbtn()" class="btn border ms-auto reset_btn">
+			</div>
+			<div class="col-4">
+				<div class="row align-items-center">
+					<div class="col-4 g-2"><input type="button" class="btn border buttons" id="box1" onclick="get(this.id)"></div>
+					<div class="col-4 g-2"><input type="button" class="btn border buttons" id="box2" onclick="get(this.id)"></div>
+					<div class="col-4 g-2"><input type="button" class="btn border buttons" id="box3" onclick="get(this.id)"></div>
+				</div>
+				<div class="row">
+					<div class="col-4 g-2"><input type="button" class="btn border buttons" id="box4" onclick="get(this.id)"></div>
+					<div class="col-4 g-2"><input type="button" class="btn border buttons" id="box5" onclick="get(this.id)"></div>
+					<div class="col-4 g-2"><input type="button" class="btn border buttons" id="box6" onclick="get(this.id)"></div>
+				</div>
+				<div class="row">
+					<div class="col-4 g-2"><input type="button" class="btn border buttons" id="box7" onclick="get(this.id)"></div>
+					<div class="col-4 g-2"><input type="button" class="btn border buttons" id="box8" onclick="get(this.id)"></div>
+					<div class="col-4 g-2"><input type="button" class="btn border buttons" id="box9" onclick="get(this.id)"></div>
+				</div>
+			</div>
+			<div class="col-4">
+				<h3 id="winner"></h3>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		
+		let no=0;
+
+		function get(val){
+ 			
+			let value_of_box=document.getElementById(val).value;
+
+			if (value_of_box == '') {
+				if (no%2 == 1) {
+					document.getElementById(val).value="X";
+				}else
+				{
+					document.getElementById(val).value="O";
+				}
+				no++;
+			}
+
+			let box1,box2,box3,box4,box5,box6,box7,box8,box9;
+			box1=document.getElementById('box1').value;
+			box2=document.getElementById('box2').value;
+			box3=document.getElementById('box3').value;
+			box4=document.getElementById('box4').value;
+			box5=document.getElementById('box5').value;
+			box6=document.getElementById('box6').value;
+			box7=document.getElementById('box7').value;
+			box8=document.getElementById('box8').value;
+			box9=document.getElementById('box9').value;
+
+			if (box1 == 'X' && box2 == 'X' && box3 == 'X' || box4 == 'X' && box5 == 'X' && box6 == 'X' ||
+				box7 == 'X' && box8 == 'X' && box9 == 'X' || box1 == 'X' && box4 == 'X' && box7 == 'X' ||
+				box2 == 'X' && box5 == 'X' && box8 == 'X' || box3 == 'X' && box6 == 'X' && box9 == 'X' ||
+				box1 == 'X' && box5 == 'X' && box9 == 'X' || box3 == 'X' && box5 == 'X' && box7 == 'X') 
+			{
+				document.getElementById('winner').innerText="A is winner.";
+				document.getElementById('box1').disabled=true;
+				document.getElementById('box2').disabled=true;
+				document.getElementById('box3').disabled=true;
+				document.getElementById('box4').disabled=true;
+				document.getElementById('box5').disabled=true;
+				document.getElementById('box6').disabled=true;
+				document.getElementById('box7').disabled=true;
+				document.getElementById('box8').disabled=true;
+				document.getElementById('box9').disabled=true;	
+			}
+			if (box1 == 'O' && box2 == 'O' && box3 == 'O' || box4 == 'O' && box5 == 'O' && box6 == 'O' ||
+				box7 == 'O' && box8 == 'O' && box9 == 'O' || box1 == 'O' && box4 == 'O' && box7 == 'O' ||
+				box2 == 'O' && box5 == 'O' && box8 == 'O' || box3 == 'O' && box6 == 'O' && box9 == 'O' ||
+				box1 == 'O' && box5 == 'O' && box9 == 'O' || box3 == 'O' && box5 == 'O' && box7 == 'O') 
+			{
+				document.getElementById('winner').innerText="B is winner.";
+				document.getElementById('box1').disabled=true;
+				document.getElementById('box2').disabled=true;
+				document.getElementById('box3').disabled=true;
+				document.getElementById('box4').disabled=true;
+				document.getElementById('box5').disabled=true;
+				document.getElementById('box6').disabled=true;
+				document.getElementById('box7').disabled=true;
+				document.getElementById('box8').disabled=true;
+				document.getElementById('box9').disabled=true;
+			}
+		}
+		function resetbtn(){
+			document.getElementById('box1').value="";
+			document.getElementById('box2').value="";
+			document.getElementById('box3').value="";
+			document.getElementById('box4').value="";
+			document.getElementById('box5').value="";
+			document.getElementById('box6').value="";
+			document.getElementById('box7').value="";
+			document.getElementById('box8').value="";
+			document.getElementById('box9').value="";
+			document.getElementById('winner').innerText="";
+				document.getElementById('box1').disabled=false;
+				document.getElementById('box1').disabled=false;
+				document.getElementById('box2').disabled=false;
+				document.getElementById('box3').disabled=false;
+				document.getElementById('box4').disabled=false;
+				document.getElementById('box5').disabled=false;
+				document.getElementById('box6').disabled=false;
+				document.getElementById('box7').disabled=false;
+				document.getElementById('box8').disabled=false;
+				document.getElementById('box9').disabled=false;
+		}
+	</script>
+	<script type="" src="js/bootstrap.bundle.min.js" ></script>
+</body>
+</html>

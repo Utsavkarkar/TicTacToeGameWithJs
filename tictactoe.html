@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        * {
+            font-size: 25px;
+            box-sizing: border-box;
+        }
+
+        input[type="button"] {
+
+            height: 40px;
+            width: 40px;
+            border: none;
+
+        }
+    </style>
+    <script type="text/javascript">
+        var cnt = 1,out;
+
+        function btn(s) {
+            // alert(s)
+            if (cnt % 2 == 1) {
+                document.getElementById(s).value = ('X')
+                document.getElementById(s).disabled = true;
+
+            }
+            else {
+                document.getElementById(s).value = ('O')
+                document.getElementById(s).disabled = true;
+
+            }
+            cnt++;
+        
+
+            var a1, a2, a3, a4, a5, a6, a7, a8, a9;
+            a1 = document.getElementById('a1').value;
+            a2 = document.getElementById('a2').value;
+            a3 = document.getElementById('a3').value;
+            a4 = document.getElementById('a4').value;
+            a5 = document.getElementById('a5').value;
+            a6 = document.getElementById('a6').value;
+            a7 = document.getElementById('a7').value;
+            a8 = document.getElementById('a8').value;
+            a9 = document.getElementById('a9').value;
+
+            if (a1 == 'X' && a2 == 'X' && a3 == 'X' || a1 == 'X' && a4 == 'X' && a7 == 'X' || a3 == 'X' && a8 == 'X' && a9 == 'X'
+                || a3 == 'X' && a8 == 'X' && a9 == 'X' || a7 == 'X' && a8 == 'X' && a9 == 'X' || a1 == 'X' && a5 == 'X' && a9 == 'X'
+                || a3 == 'X' && a5 == 'X' && a7 == 'X' || a3 == 'X' && a4 == 'X' && a6 == 'X') {
+                alert("A is win");
+                document.getElementById('a1').disabled=true;
+                document.getElementById('a2').disabled=true;
+                document.getElementById('a3').disabled=true;
+                document.getElementById('a4').disabled=true;
+                document.getElementById('a5').disabled=true;
+                document.getElementById('a6').disabled=true;
+                document.getElementById('a7').disabled=true;
+                document.getElementById('a8').disabled=true;
+                document.getElementById('a9').disabled=true;
+                // document.getElementById(s).value=('X')
+
+            }
+
+            if (a1 == 'O' && a2 == 'O' && a3 == 'O' || a1 == 'O' && a4 == 'O' && a7 == 'O' || a3 == 'O' && a8 == 'O' && a9 == 'O'
+                || a3 == 'O' && a8 == 'O' && a9 == 'O' || a7 == 'O' && a8 == 'O' && a9 == 'O' || a1 == 'O' && a5 == 'O' && a9 == 'O'
+                || a3 == 'O' && a5 == 'O' && a7 == 'O' || a3 == 'O' && a4 == 'O' && a6 == 'O') {
+                alert("B is win");
+                document.getElementById('a1').disabled=true;
+                document.getElementById('a2').disabled=true;
+                document.getElementById('a3').disabled=true;
+                document.getElementById('a4').disabled=true;
+                document.getElementById('a5').disabled=true;
+                document.getElementById('a6').disabled=true;
+                document.getElementById('a7').disabled=true;
+                document.getElementById('a8').disabled=true;
+                document.getElementById('a9').disabled=true;
+            }
+
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+    <table align="center">
+        <tr>
+            <td><input type="button" id="a1" onclick="btn('a1')" name=""></td>
+            <td><input type="button" id="a2" onclick="btn('a2')" name=""></td>
+            <td><input type="button" id="a3" onclick="btn('a3')" name=""></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="a4" onclick="btn('a4')" name=""></td>
+            <td><input type="button" id="a5" onclick="btn('a5')" name=""></td>
+            <td><input type="button" id="a6" onclick="btn('a6')" name=""></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="a7" onclick="btn('a7')" name=""></td>
+            <td><input type="button" id="a8" onclick="btn('a8')" name=""></td>
+            <td><input type="button" id="a9" onclick="btn('a9')" name=""></td>
+        </tr>
+
+    </table>
+</body>
+
+</html>
